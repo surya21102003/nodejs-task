@@ -8,9 +8,13 @@ const cors = require("cors");
 
 dotenv.config();
 connectDB();
-
+const fronturl="https://nodejs-task-frontend-task.onrender.com";
 const app = express();
-app.use(cors());
+app.use(cors({
+origin:fronturl,
+  credentials:true
+
+}));
 app.use(express.json());
 
 app.use("/api/products", productRoutes);
