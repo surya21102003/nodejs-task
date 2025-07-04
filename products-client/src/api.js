@@ -3,6 +3,7 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL:"https://nodejs-task-backend.onrender.com/api",
+  withCredentials:true,
 });
 
 API.interceptors.request.use((req) => {
